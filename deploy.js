@@ -18,6 +18,7 @@ const main = async() => {
     const committer = git.Signature.now('Github Action', 'action@github.com')
     const newCommitId = await repository.createCommit('HEAD', author, committer, 'chore: update via action', oid, [parent]);
     console.info(`new commit created: id -> ${newCommitId}`);
+    console.info(`the token -> ${process.env.GITHUB_TOKEN}`)
 
     const remote = await git.Remote.create(repository, 'upstream', `silvercrown07:${process.env.GITHUB_TOKEN}@github.com/action-demo.git`)
     await remote.push(['refs/heads/master:refs/heads/master']);
