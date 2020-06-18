@@ -20,7 +20,7 @@ const main = async() => {
     console.info(`new commit created: id -> ${newCommitId}`);
     console.info(`the token -> ${process.env.GITHUB_TOKEN}`)
 
-    const remote = await git.Remote.create(repository, 'upstream', `https://silvercrown07:${process.env.GITHUB_TOKEN}@github.com/action-demo.git`)
+    const remote = await git.Remote.create(repository, 'upstream', `https://silvercrown07:${process.env.GITHUB_TOKEN}@github.com/silvercrown07/action-demo.git`)
     await remote.push(['refs/heads/master:refs/heads/master']);
     console.info('pushed to remote')
 }
