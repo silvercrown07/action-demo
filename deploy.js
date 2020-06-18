@@ -19,7 +19,7 @@ const main = async() => {
     const newCommitId = await repository.createCommit('HEAD', author, committer, 'chore: update via action', oid, [parent]);
     console.info(`new commit created: id -> ${newCommitId}`);
 
-    const remote = await git.Remote.create(repository, 'origin', `silvercrown07:${process.env.GITHUB_TOKEN}@github.com/action-demo.git`)
+    const remote = await git.Remote.create(repository, 'upstream', `silvercrown07:${process.env.GITHUB_TOKEN}@github.com/action-demo.git`)
     await remote.push(['refs/heads/master:refs/heads/master']);
     console.info('pushed to remote')
 }
