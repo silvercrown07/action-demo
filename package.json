@@ -1,5 +1,11 @@
 {
+  "scripts": {
+    "deploy": "node deploy.js"
+  },
   "dependencies": {
     "nodegit": "^0.26.5"
+  },
+  "devDependencies": {
+    "@types/nodegit": "^0.26.5"
   }
 }
