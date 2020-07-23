@@ -10,4 +10,5 @@ jobs:
       - uses: azure/setup-helm@v1
         with:
           version: 3.2.4
-      - run: helm --version
+      - run: helm version
+      - run: kubectl version
